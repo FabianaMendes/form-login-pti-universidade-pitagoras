@@ -1,6 +1,7 @@
 const form = document.getElementById("form");
 const user = document.getElementById("user");
 const password = document.getElementById("password");
+const welcomePage = document.getElementById("welcome");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -9,8 +10,8 @@ form.addEventListener("submit", (e) => {
         user: user.value,
         password: password.value
     }
-    
-    localStorage.setItem('user', data);
+
+    localStorage.setItem('user', JSON.stringify(data));
 
     fetch("welcome.html", {
         method: "POST",
